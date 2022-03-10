@@ -9,7 +9,7 @@
           <tr>
             <strong>Name: </strong> <%= friend.fullname %><br>
             <strong>Email: </strong> <%= friend.email %> <br>
-            <%= link_to "View Profile", '#',
+            <%= link_to "View Profile", user_path(friend),
                               class: "btn btn-sm btn-success " %> <br>
             <% if current_user.not_friends_with?(friend.id) %>
               <span>
