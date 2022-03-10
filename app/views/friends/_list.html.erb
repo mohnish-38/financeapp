@@ -9,13 +9,13 @@
           <th scope="col">Actions</th>
         </tr>
       </thead>
-      <tbody>
-        <% @tracked_friends.each do |friends| %>
+      <tbody >
+        <% @tracked_friends.each do |friend| %>
         <tr>
-          <th scope="row"><%= friends.email%></th>
-          <td><%= friends.first_name%></td>
-          <td><%= friends.last_name%></td>
-          <td><%= link_to 'Remove', "#",class: "btn btn-sm btn-danger"%></td>
+          <th scope="row"><%= friend.email%></th>
+          <td><%= friend.first_name%></td>
+          <td><%= friend.last_name%></td>
+          <td><%= link_to 'Remove', friendship_path(friend), method: :delete, data: {confirm: 'Are you Sure?' }, class: "btn btn-sm btn-danger"%></td>
         </tr>
       <%end%>
       </tbody>
